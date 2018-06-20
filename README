@@ -1,0 +1,5 @@
+use the command below for training. 3000 here means use the first 3000 mats for training
+$ python3 training_main.py 3000
+
+use the command below for testing. 1000 3000 here means use 1000th to 3000th mats for testing
+$ python3 testing_main.py 1000 3000

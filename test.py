@@ -9,6 +9,7 @@
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.externals import joblib
 
-def test(X):
-    model = joblib.load('model.pkl')
+# X: data; which: which classifier
+def test(X, which):
+    model = joblib.load('model-%s.pkl' % which)
     return model.predict(X)

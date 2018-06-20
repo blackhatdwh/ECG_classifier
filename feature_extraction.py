@@ -6,7 +6,7 @@
 #
 # Distributed under terms of the MIT license.
 from math import sqrt, pow
-from scipy.stats import skew, kurtosis
+from scipy.stats import skew, kurtosis, gaussian_kde
 from numpy import *
 
 def get_simple_RR_features(RR):
@@ -55,3 +55,15 @@ def get_poincare_feature(RR):
 
     dispersion = sqrt(term1-term2) / cp
     return [stepping, dispersion]
+
+def get_probability_density_feature(RR):
+    f = gaussian_kde(RR)
+    kurt_f = kurtosis(f)
+    skew_f = skew(f)
+    peaks = find_extreme_points(RR, 'max')
+    num_pks = len(max_loc['loc'])
+    if num_pks > 1:
+        dom_peak_
+
+
+    

@@ -9,7 +9,8 @@
 from sklearn import model_selection
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.externals import joblib
-def train(X, Y):
+# X: data; Y: label; which: for which classifier
+def train(X, Y, which):
     model = AdaBoostClassifier(n_estimators=30, random_state=7)
     model.fit(X, Y)
-    joblib.dump(model, 'model.pkl')
+    joblib.dump(model, 'model-%s.pkl' % which)
